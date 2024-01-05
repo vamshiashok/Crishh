@@ -1,0 +1,9 @@
+1) Create the Ansible Engine and Target servers
+2) Connect to these two servers
+$sudo -i #go to root user
+$sudo apt update #for amazon linux server $sudo yum update
+2) Install ansible in the engine server
+$sudo apt install ansible  # For amazon linux server $yum install ansible
+$sudo apt install git python python-pip python-level openssl -y # 
+$vi /etc/ansible/hosts
+
