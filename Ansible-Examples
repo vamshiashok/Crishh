@@ -1,0 +1,111 @@
+Referral Video: https://youtu.be/zw8eUSGNLq4?si=_IRZJfC1JZ0a8oMC
+Modify the hosts file $vim /etc/ansible/hosts
+-------------------------------------------------
+Ex: Example of inventory file(hosts)
+[dev]
+172.32.16.123
+162.34.56.120
+[qa]
+162.32.15.124
+152.34.26.122
+Esc :wq!
+-------------------------------------------------
+If we want to push the code from ansible server to nodes it can be done in 3 ways:
+1. Adhoc Commands
+2. Modules
+3. Playbooks
+--------------------------------------------------
+Anible Adhoc Commands:
+* These Commands can be run individually to perform quick functions
+$ansible dev -a "touch file1" #It will create the file1 in file in the dev group servers
+$ansible dev -a "ls" 
+$ansible dev[0] -a "touch file2" #It will create file2 only in the first dev group server 
+$ansible dev[0] -a "ls"
+
+$ansible dev -a "sudo apt/yum install git -y" #Installing git in dev group servers uses apt for ubuntu and yum for amazon linux servers
+
+$ansible dev[0] -a "rm -rf file2" #Removes file2 from the first server in the dev group
+
+$ansible dev -a "sudo apt install maven -y" #Installing maven in dev servers
+$ansible dev -ba "apt install maven -y" #Instead using sudo in the command you can just represent "-b" 
+---------------------------------------------------
+Modules: Ansible ships with number of modules that can be executed directly to remote hosts or playbooks.
+$ansible qa -b -m yum/apt -a "pkgname=maven state=present" #Installing maven
+$ansible qa -b -m yum/apt -a "pkgname=maven state=absent" #Uninstalling maven #use "state=latest" to update the packages
+
+$ansible qa -b -m yum/apt -a "pkgname=httpd state=present" #Installing HTTPD
+$ansible qa -b -m service -a "name=httpd state=started" #starting the httpd service 
+
+$ansible qa -b -m user -a "name=crish" #Creating the user "crish" in the remote nodes/servers
+#Create a file in the ansible engine
+$vim hello_file
+This is a sample ansible file
+Esc :wq!
+$ansible qa -b -m copy -a "src=hello_file dest=/tmp" #Copying the hello_file into the dev group servers to the /tmp location
+--------------------------------------------------
+Playbooks: 
+* Playbooks in ansible are written in YAML language
+* It is human readable and serialization language commonly used for configuration files.
+* You can write code consists of vars, tasks, handlers, files, templated and roles.
+* Each item in the list is a key-value pair.
+* All YAML  files begin with "---" 
+* Extension for playbook file is ".yml"
+* Playbooks are mainly divided into sections like
+  -> Target Section #Target nodes/servers
+  -> Variable Section 
+  -> Task Section
+Creating First Playbook
+$vim first-playbook.yml
+---
+-  hosts: qa
+   user: ansible
+   become: true/yes
+   connection: ssh
+   tasks:
+    -  name: Installing httpd on QA servers
+       action: yum/apt name=httpd state=present
+Esc :wq!
+$ansible-playbook first-playbook.yml #For Excute the playbook
+-------------------------------------------------------------
+Vars:
+$vim first-playbook.yml
+---
+-  hosts: qa
+   become: true/yes
+   vars:
+      pkgname: maven
+   tasks:
+    -  name: Installing maven on QA servers
+       action: yum/apt name=':{{pkdname}}' state=present
+Esc :wq!
+--------------------------------------------------------------
+Handlers: Handlers is same as task but it will run when called by another task.
+Dry_Run: Check whether the playbook is formatted correctly or not
+$ansible-playbook first-playbook.yml --check
+$vim first-playbook.yml
+---
+-  hosts: qa
+   become: true/yes
+   tasks:
+    -  name: Installing httpd on QA servers
+       action: yum/apt name=httpd state=installed #use state=installed while using handlers
+       notify: restart httpd
+   handlers:
+    -  name: restarted httpd
+       action: service name=httpd status=restarted
+
+Esc :wq!
+---------------------------------------------------------------
+Loops: Ansible loops includes changing ownership on several files and directories with file module, creating multiple users with users modules
+$vim first-playbook.yml
+---
+-  hosts: qa
+   become: true/yes
+   tasks:
+    -  name: adding users
+       user: name='{{item}}' state=present
+       with_items:
+            - crish
+            - krish
+            - chummi
+Esc :wq!
