@@ -57,26 +57,26 @@ Playbooks:
 Creating First Playbook
 $vim first-playbook.yml
 ---
--  hosts: qa
-   user: ansible
-   become: true/yes
-   connection: ssh
-   tasks:
-    -  name: Installing httpd on QA servers
-       action: yum/apt name=httpd state=present
+- hosts: qa
+  user: ansible
+  become: true/yes
+  connection: ssh
+  tasks:
+    - name: Installing httpd on QA servers
+      action: yum/apt name=httpd state=present
 Esc :wq!
 $ansible-playbook first-playbook.yml #For Excute the playbook
 -------------------------------------------------------------
 Vars:
 $vim first-playbook.yml
 ---
--  hosts: qa
-   become: true/yes
-   vars:
-      pkgname: maven
-   tasks:
-    -  name: Installing maven on QA servers
-       action: yum/apt name=':{{pkdname}}' state=present
+- hosts: qa
+  become: true/yes
+  vars:
+    pkgname: maven
+  tasks:
+    - name: Installing maven on QA servers
+      action: yum/apt name=':{{pkdname}}' state=present
 Esc :wq!
 --------------------------------------------------------------
 Handlers: Handlers is same as task but it will run when called by another task.
@@ -84,28 +84,28 @@ Dry_Run: Check whether the playbook is formatted correctly or not
 $ansible-playbook first-playbook.yml --check
 $vim first-playbook.yml
 ---
--  hosts: qa
-   become: true/yes
-   tasks:
-    -  name: Installing httpd on QA servers
-       action: yum/apt name=httpd state=installed #use state=installed while using handlers
-       notify: restart httpd
-   handlers:
-    -  name: restarted httpd
-       action: service name=httpd status=restarted
-
+- hosts: qa
+  become: true/yes
+  tasks:
+    - name: Installing httpd on QA servers
+      action: yum/apt name=httpd state=installed #use state=installed for handlers
+      notify: restart httpd
+  handlers:
+    - name: restarted httpd
+      action: service name=httpd status=restarted
 Esc :wq!
 ---------------------------------------------------------------
 Loops: Ansible loops includes changing ownership on several files and directories with file module, creating multiple users with users modules
 $vim first-playbook.yml
 ---
--  hosts: qa
-   become: true/yes
-   tasks:
-    -  name: adding users
-       user: name='{{item}}' state=present
-       with_items:
-            - crish
-            - krish
-            - chummi
+- hosts: qa
+  become: true/yes
+  tasks:
+    - name: adding users
+      user: name='{{item}}' state=present
+      with_items:
+        - crish
+        - krish
+        - chummi
+
 Esc :wq!
