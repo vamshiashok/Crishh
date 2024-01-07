@@ -89,7 +89,7 @@ $vim first-playbook.yml
   tasks:
     - name: Installing httpd on QA servers
       action: yum/apt name=httpd state=installed #use state=installed for handlers
-      notify: restart httpd
+      notify: restart httpd #The notify will call the handlers actions
   handlers:
     - name: restarted httpd
       action: service name=httpd status=restarted
