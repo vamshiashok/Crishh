@@ -76,7 +76,7 @@ $vim first-playbook.yml
     pkgname: maven
   tasks:
     - name: Installing maven on QA servers
-      action: yum/apt name=':{{pkdname}}' state=present
+      action: yum/apt name=':{{pkgname}}' state=present
 Esc :wq!
 --------------------------------------------------------------
 Handlers: Handlers is same as task but it will run when called by another task.
