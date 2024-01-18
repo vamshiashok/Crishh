@@ -38,5 +38,6 @@ sudo apt update && sudo apt install terraform
 7) $terraform apply
 8) Successfully created an instance in server. # Refer https://youtu.be/CzdfdKWRDB8?si=X6TjTUagvY-d9ZXc
 
+Always store your state files in remote backend, don't store the state files in git(src management tools) or in a local machine.
 
 
