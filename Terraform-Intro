@@ -1,0 +1,42 @@
+The terraform file will be ".tf" extension.
+
+Uses of Terraform
+--------------------------
+1) Manage any infrastructure
+2) Track of infrastructure
+3) Automate changes
+4) Standardize configuration
+5) Collaborate
+
+Life-Cycle of Terraform
+---------------------------
+1) Write the terraform config file
+Dry Run:- Dry Run is a way of using which you can actually see what are the things that are going to happen when you execute the terraform config file.
+2) Terraform Plan (Review the changes terraform will make to your infrastructure)
+3) Terraform Apply (Terraform provisions your infrastrucutre and updates to the state file)
+-----------------------------------------
+Four main commands in terraform:
+1) terraform init
+2) terraform plan
+3) terraform apply
+4) terraform destroy
+-----------------------------------------
+Installing Terraform on linux ubuntu
+---------------------------------------------
+1) $wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+2) $terraform --version
+3) Installing aws cli in ubuntu
+-> $sudo apt install awscli -y
+-> Create a user and give admin access, after creating the user create the access key for the user.
+-> $aws configure
+-> Provide the appropriate details 
+4) Go to the location where the main.tf file is
+5) $terraform init
+6) $terraform plan
+7) $terraform apply
+8) Successfully created an instance in server. # Refer https://youtu.be/CzdfdKWRDB8?si=X6TjTUagvY-d9ZXc
+
+
+
