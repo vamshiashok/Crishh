@@ -1,3 +1,21 @@
+Ansible
+--------:- Ansible is the simplest solution for configuring the nodes. 
+Ansible requires nothing more than a password less authentication or SSH key to start managing systems and manage them without any agent.
+
+
+Playbooks
+------------:- Playbooks are simple YAML files. These files are descriptions of the desired state of your systems.
+Ansible then does the hard work of getting your systems to that state no matter what state they are currently in.
+Playbooks make your installations, upgrades and day-to-day management repeatable and reliable.
+Playbooks contains 
+  -> Plays
+  -> Tasks
+  -> Modules
+
+Host Inventory
+--------------:- It is the list of "Managed Hosts"
+
+
 Referral Video: https://youtu.be/zw8eUSGNLq4?si=_IRZJfC1JZ0a8oMC
 Modify the hosts file $vim /etc/ansible/hosts
 -------------------------------------------------
