@@ -15,6 +15,11 @@ Playbooks contains
 Host Inventory
 --------------:- It is the list of "Managed Hosts"
 
+Ansible Tower
+-------------
+-> Ansible Tower is a framework for Ansible.
+-> It provides a GUI. Thus, reducing the dependency on the command prompt window.
+-> Instead of typing long commands, tasks can now be performed in a single click.
 
 Referral Video: https://youtu.be/zw8eUSGNLq4?si=_IRZJfC1JZ0a8oMC
 Modify the hosts file $vim /etc/ansible/hosts
