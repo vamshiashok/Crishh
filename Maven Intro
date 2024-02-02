@@ -1,0 +1,25 @@
+Maven:
+------
+-> It is an automation project management tool developed by apache software foundation.
+-> It is based on POM (Project Object Model)
+-> It is build tool and manage dependencies.
+-> It can build any number of projects into desired output. Such as jar, war...
+-> It is Mostly used for java projects.
+-> Maven is written in java.
+-> POM file is in xml language( Extensible Markup Langugage)
+
+Jar file(java archive):- When the file is in the compile state, it is called as the jar file(.class)
+War file(Web Archive):- Along with jar file it includes HTML like files exists. war conists of jar also
+EAR file(Enterprise Application Archive):- The EAR file consists of both the jar and war files.
+
+Dependencies:- It refers to the java libraries that are needed for the project.
+
+Java structure:
+---------------
+Source Code -> Project Structure -> Dependencies/Library -> Test -> Reporting
+
+Maven Uses:
+-----------
+-> It makes Project easy to build.
+-> Easy to add new dependencies.
+-> The tool helps get the right jar files for each project as there may be different versions of seperate packages.
