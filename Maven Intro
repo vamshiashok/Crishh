@@ -23,3 +23,13 @@ Maven Uses:
 -> It makes Project easy to build.
 -> Easy to add new dependencies.
 -> The tool helps get the right jar files for each project as there may be different versions of seperate packages.
+
+Maven Build Lifecycle:
+----------------------
+-> Generate Resources
+-> Compile code - mvn compile
+-> Test - mvn test
+-> Package - mvn package
+-> Install - mvn install
+-> Deploy(to servers)
+
