@@ -1,0 +1,8 @@
+Jenkins
+----------
+CI -> Continuous Integration (Integration- adding/combining)
+CD -> Continuous Delivery/Deployment
+
+CI = Code -> Build -> Test -> Integration 
+CD = Code -> Build -> Test -> Integration -> QA or UAT(User Acceptance Test)
+Doing all the process as automation called as Continuous Deployment
