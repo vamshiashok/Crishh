@@ -1,1 +1,6 @@
 If there are n no.of commits, to pick a commit from those we use cherrypick by using commit ID
+
+
+git cherry-pick in git means choosing a commit from one branch and applying it to another branch. 
+This is in contrast with other ways such as merge and rebases which normally apply many commits into another branch. 
+git cherry-pick is just like rebasing, an advanced concept and also a powerful command.
