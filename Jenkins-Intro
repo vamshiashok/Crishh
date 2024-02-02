@@ -6,3 +6,27 @@ CD -> Continuous Delivery/Deployment
 CI = Code -> Build -> Test -> Integration 
 CD = Code -> Build -> Test -> Integration -> QA or UAT(User Acceptance Test)
 Doing all the process as automation called as Continuous Deployment
+
+Pipeline:- Step by step execution
+-> Version Control(Github)
+-> Build 
+-> Unit Test
+-> Deploy
+-> Auto test
+-> Deploy to production
+-> Measure + Validate
+
+Jenkins:
+--------
+-> Jenkins is a open source project written in java that runs on windows, linux, macOS.
+-> Consists of plugins (By using plugins we can automate the process)
+-> Whenever developers write code, we integrate all the code of all developers at any point of time and we build, test and deliver/deploy to client. This is called CI/CD.
+
+Workflow of Jenkins:
+--------------------
+-> We can attach Git, Maven, selenium and Artifactory plugins to the jenkins.
+-> Once developer put the code in github jenkins pull the code and send to maven for build.
+-> Once build is done, jenkins pull that code and send it to selenium for testing.
+-> Once testing is done, jenkins pull that code and send to Artifactory as per requirement.
+-> We can also deploy with jenkins.
+
