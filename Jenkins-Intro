@@ -30,3 +30,7 @@ Workflow of Jenkins:
 -> Once testing is done, jenkins pull that code and send to Artifactory as per requirement.
 -> We can also deploy with jenkins.
 
+Jenkins Master -> Jenkins Slave 1 , Jenkins Slave 2 ..
+-> Jenkins Master will distribute its workload to the Slaves
+-> Jenkins Slaves are generally required to provide the desired environment. It works on the basis of request recieved from Jenkins Master.
+-> The DevOps engineer will assign tags for the each slave , so that the work load will be distributed among those slaves.
