@@ -24,4 +24,24 @@ Docker Daemon:- Docker Daemonn runs on the host OS. It is responsible for runnin
 
 Docker Commands:
 -------------------
-$yum install docker -y
+$yum install docker -y (To install Docker)
+$systemctl restart docker.service (To start the service)
+$systemctl status docker.service
+Get ubuntu docker image as ($docker pull ubuntu)
+$docker images (To check how many images are there in the docker engine)
+$docker ps (To list out all the containers) (It displays only the running containers)
+$docker ps -a (To list all the containers installed including stopped containers too)
+If we use docker pull it only installs the image, but if we use the $docker run ubuntu , it will also creates the container in the engine.
+$docker search jenkins (To search for an Image in the docker hub)
+If you pull an image from docker hub, it is only install the docker image , if you have to create a container on that image
+$docker run -it ubuntu
+To check the container belongs to which image ($cat /etc/os-release)
+$docker ps -a (To list all the containers) 
+To change the default name for the container ($docker run -it --name crish ubuntu)
+To change the command for container ($docker run -it --name crish ubuntu /bin/bash)
+To start a docker container ($docker start <container_name>)
+To enter into the container ($docker attach <container_name)
+You can only attach to the container only when it is in start state.
+$docker stop <container_name> (To stop the container)
+
+
