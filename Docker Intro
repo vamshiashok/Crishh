@@ -1,0 +1,27 @@
+Docker is used for cost minimization.
+Instead of creating multiple instances for the each service, we can create the one server and we create the containers in that.
+Instead of creating multiple servers, with in a one server we can create containers. 
+
+Container:- It is like a virtual machine and it does not have any OS.
+
+Vitualization:- Process that allows for more efficient utilization of physical computer hardware and is the foundation of cloud computing.
+
+Hypervisor:- Help to make virtualization and create a Vitual Machine(VM).
+
+Containerization:- Process of packing application along with its dependencies.
+
+Docker: It is a tool that create this container. It is advance than virtualization.
+
+-> It is designed to create, deploy and run applications.
+-> Docker is written on go language.
+-> Docker uses container on host OS to run applications.
+-> We can install docker on any OS but docker engine natively runs on linux distribution.
+-> Docker performs OS level virtualization also known as Containerization.
+
+Docker Client:- It is the primary way that many docker users interact with Docker.
+Docker Host:- Docker host is the machine where you installed the docker image.
+Docker Daemon:- Docker Daemonn runs on the host OS. It is responsible for running containers to manage docker services.
+
+Docker Commands:
+-------------------
+$yum install docker -y
