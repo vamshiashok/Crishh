@@ -1,0 +1,75 @@
+DevOps
+------
+DevOps is a culture that allows the development and the operations team to work together. 
+This results in continuous development, testing, integration, deployment, and monitoring of the software throughout the lifecycle.
+
+GIT
+-----
+GIT it is a Distrubuted Version Control System or Source Code Management Tool by providing data assurance for developing quality software.
+-> Repositories
+-> Work Space
+-> Staging Area
+-> Commits
+-> Issues and Pull Requests
+
+VCS:- It is a system that records changes to a file or set of files over time 
+      so that you can recall specific versions later.
+
+
+Repository
+-------------
+It is a directory or a storage space where your projects can live.
+It can be a local to a folder on you computer or 
+It can be a storage space on another online host (Such as GITHUB).
+
+$git init (To initialize the GIT)
+$git add <file_name> (To add files from the working area to the staging area)
+$git commit -m "Comment about the commit" <file_name> (To commit the files from staging area to local )
+$git push (To move the files from local to remote server)
+$git status (Check the status of the GIT files)
+$git clone (Used to download the remote repository to the local)
+$git pull ( Used to fetch and download the content from a remote repository 
+            and immediately update the local repository to match that content)
+$git checkout -b <branch_name> (To create a new branch and enter into it)
+$git checkout <branch_name> (To move from one branch to another)
+$git fork (You can create a copy of the original repo on your local machine or GITHUB profile)
+$git log (We can track all the commits have been done)
+$git cherry-pick (If there are n no.of commits, to pick a commit from those we use cherrypick by using commit ID
+                  git cherry-pick in git means choosing a commit from one branch and applying it to another branch. )
+
+$git merge & git rebase 
+both commands are used to merge the files from the other branches to the main branch , 
+but when we use the git merge the commits goes to the top in the git log, while rebase will be not prioritized.
+
+Linux
+---------
+Linux is an open source operating system (OS). An operating system is the software that directly manages a system's hardware and resources, 
+like CPU, memory, and storage. The OS sits between applications and hardware and makes the connections between all of your software and the physical resources that do the work.
+
+Linux is known for its stability, security, flexibility, and scalability, making it an ideal choice for DevOps practices.
+
+Commands in linux
+$cat
+$ls
+$pwd
+$mkdir
+$cd 
+$rmdir
+$cp
+$mv
+$touch
+$locate
+$find
+$ps 
+$grep
+$echo
+$sort
+$wc
+$head
+$tail
+$vi
+$tar
+$zip
+
+
+
